@@ -1,0 +1,54 @@
+html,
+body {
+    height: 100%;
+}
+
+.video-avatar {
+    width     : 200px;
+    background: gainsboro;
+}
+
+.col.left,
+.col.right {
+    height          : 100%;
+}
+
+.row {
+    display              : grid;
+    grid-template-columns: 200px auto 200px;
+    height               : 100%;
+}
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.browser {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.lframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-image: url(https://webstockreview.net/images/modern-frame-png.png);*/
+    width: 200px;
+    height: 150px;
+    background-size: contain;
+}
+
+.chat {
+    height: 100%;
+    background-image: url(https://i.blogs.es/2dfb79/telegram_desktop/450_1000.jpg);
+    background-position: -117px 0px;
+    background-size: 319px 370px;
+    background-repeat: no-repeat;
+}

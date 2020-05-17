@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+
+    </style>
+  </head>
+  <body onload="init()">
+    <form action="#">
+      <h5>Current Room ID: <span id="curr_room_id"></span><br/></h5>
+      <input id="new_room_id" name="room" type="text" placeholder="Enter a room id to connect..." style="padding: 5px"/>
+      <input type="submit" id="connect" value="Connect" />
+    </form>
+    <input id="call" type="submit" value="Call" disabled="true"/>
+    <input id="end" type="submit" value="End Call"disabled="true"/>
+
+    <h1>local</h1>
+    <video id="local_video" width="680px" style="border: 1px solid black;"></video>
+    <h1>remote</h1>
+    <video id="remote_video" width="680px" style="border: 1px solid black;"></video>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/client.js"></script>
+    <script>
+      function init() {
+        console.log("document loaded");
+        call.removeAttribute("disabled");
+        call.addEventListener("click", function(){
+          createPeerConnection();
+          call.setAttribute("disabled", true);
+          end.removeAttribute("disabled");
+        });
+        end.addEventListener("click", function() {
+          // change rooms
+          end.setAttribute("disabled", true);
+          call.removeAttribute("disabled");
+        });
+      }
+    </script>
+  </body>
+</html>
